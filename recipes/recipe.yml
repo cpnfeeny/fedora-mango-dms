@@ -29,7 +29,6 @@ modules:
         - sdegler/hyprland
     install:
       packages:
-        - micro
         - dms
         - mangowm
         - quickshell
@@ -39,7 +38,6 @@ modules:
         - kitty
         - netbird
         - netbird-ui
-        - gtk4
 
   - type: default-flatpaks
     configurations:
