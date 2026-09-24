@@ -53,6 +53,7 @@ modules:
           - com.ranfdev.DistroShelf
           - md.obsidian.Obsidian
       - scope: user # Also add Flathub user repo, but no user packages
+
   - type: systemd
     system:
       disabled:
