@@ -6,7 +6,8 @@ name: fedora-mango-dms
 description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
+#base-image: ghcr.io/ublue-os/silverblue-main
+base-image: ghcr.io/ublue-os/bluefin-dx
 image-version: latest # You can pin to a specific version of Fedora as well
 
 # module configuration, executed in order
@@ -19,12 +20,31 @@ modules:
 
   - type: dnf
     repos:
+      files:
+        - netbird.repo
       copr:
-        - atim/starship
+        - avengemedia/danklinux
+        - avengemedia/dms
+        - kaleedtc/mangowm
+        - sdegler/hyprland
     install:
       packages:
         - micro
         - starship
+        - dms
+        - mangowm
+        - quickshell
+        - hypridle
+        - mutagen
+        - dgop
+        - qt6ct
+        - kitty
+        - fish
+        - netbird
+        - netbird-ui
+        - gtk4
+        - webkitgtk6.0
+        - xdg-utils
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
@@ -40,6 +60,12 @@ modules:
         install: # system flatpaks we want all users to have and not remove
           - org.mozilla.firefox
           - org.gnome.Loupe
+          - com.valvesoftware.Steam
+          - io.github.flattool.Warehouse
+          - org.chromium.Chromium
+          - com.github.tchx84.Flatseal
+          - com.ranfdev.DistroShelf
+          - md.obsidian.Obsidian
       - scope: user # Also add Flathub user repo, but no user packages
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
