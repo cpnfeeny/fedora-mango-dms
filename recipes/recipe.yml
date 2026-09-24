@@ -30,27 +30,21 @@ modules:
     install:
       packages:
         - micro
-        - starship
         - dms
         - mangowm
         - quickshell
         - hypridle
-        - mutagen
         - dgop
         - qt6ct
         - kitty
-        - fish
         - netbird
         - netbird-ui
         - gtk4
-        - webkitgtk6.0
-        - xdg-utils
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
         # "firefox" is the main package, "firefox-langpacks" is a dependency
-        - firefox
-        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+        # also remove firefox dependency (not required for all packages, this is a special case)
 
   - type: default-flatpaks
     configurations:
