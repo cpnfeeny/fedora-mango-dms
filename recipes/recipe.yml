@@ -35,8 +35,8 @@ modules:
         - hypridle
         - dgop
         - kitty
-        - netbird
-        - netbird-ui
+        #- netbird
+        #- netbird-ui
 
   - type: default-flatpaks
     configurations:
@@ -54,9 +54,8 @@ modules:
           - md.obsidian.Obsidian
       - scope: user # Also add Flathub user repo, but no user packages
 
-  - type: systemd
-    system:
-      disabled:
-        - netbird.service
+  - type: script
+    snippets:
+      - "dnf install -y --setopt=tsflags=noscripts netbird netbird-ui"
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
