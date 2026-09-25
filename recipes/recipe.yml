@@ -22,10 +22,12 @@ modules:
     repos:
       files:
         - netbird.repo
+        - terra.repo
       copr:
+        - errornointernet/quickshell
         - avengemedia/danklinux
         - avengemedia/dms
-        - kaleedtc/mangowm
+        #- kaleedtc/mangowm
         - sdegler/hyprland
     install:
       packages:
@@ -33,10 +35,36 @@ modules:
         - mangowm
         - quickshell
         - hypridle
+        - matugen
+        - qt6ct
         - dgop
         - kitty
+        - atuin
+        - neovim
+        - wlr-randr
         #- netbird
         #- netbird-ui
+        - xdg-desktop-portal-wlr
+        - ripgrep
+        - fzf
+        - mpv
+        - yt-dlp
+        - brightnessctl
+        - wl-clipboard
+        - rapid-photo-downloader
+        - zoxide
+        - jq
+        - nmap
+        - xdg-utils
+        - hugo
+        - android-tools
+        - eza
+        - simple-scan
+        - udiskie
+        #needed coprs
+        #bluetuith
+        #freshfetch
+        # yazi
 
   - type: default-flatpaks
     configurations:
@@ -46,6 +74,7 @@ modules:
         install: # system flatpaks we want all users to have and not remove
           - org.mozilla.firefox
           - org.gnome.Loupe
+          - dev.zed.Zed
           - com.valvesoftware.Steam
           - io.github.flattool.Warehouse
           - org.chromium.Chromium
