@@ -2,5 +2,5 @@
 vt = 1
 
 [default_session]
-command = "env XKB_DEFAULT_LAYOUT=us XKB_DEFAULT_VARIANT=dvorak dms-greeter --command mango"
+command = "/usr/bin/dms-greeter --command 'mango -c /var/lib/greeter/.config/mango/config.conf' --cache-dir /var/cache/dms-greeter"
 user = "greeter"
