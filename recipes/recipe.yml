@@ -1,22 +1,16 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-# image will be published to ghcr.io/<user>/<name>
 name: fedora-mango-dms
-# description will be included in the image's metadata
 description: This is my personal OS image.
 
-# the base image to build on top of (FROM) and the version tag to use
-#base-image: ghcr.io/ublue-os/silverblue-main
 base-image: ghcr.io/ublue-os/bluefin-dx
-image-version: latest # You can pin to a specific version of Fedora as well
+image-version: latest
 
-# module configuration, executed in order
-# you can include multiple instances of the same module
 modules:
   - type: files
     files:
       - source: system
-        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+        destination: /
 
   - type: dnf
     repos:
@@ -30,6 +24,7 @@ modules:
     install:
       packages:
         - dms
+        - dux-greeter
         - mangowm
         - quickshell
         - hypridle
@@ -52,17 +47,12 @@ modules:
         - simple-scan
         - udiskie
         - nano
-        #needed coprs
-        #bluetuith
-        #freshfetch
-        # yazi
 
   - type: default-flatpaks
     configurations:
-      - notify: true # Send notification after install/uninstall is finished (true/false)
+      - notify: true
         scope: system
-        # If no repo information is specified, Flathub will be used by default
-        install: # system flatpaks we want all users to have and not remove
+        install:
           - org.mozilla.firefox
           - org.gnome.Loupe
           - dev.zed.Zed
@@ -72,7 +62,7 @@ modules:
           - com.github.tchx84.Flatseal
           - com.ranfdev.DistroShelf
           - md.obsidian.Obsidian
-      - scope: user # Also add Flathub user repo, but no user packages
+      - scope: user
 
   - type: script
     snippets:
@@ -80,7 +70,10 @@ modules:
 
   - type: systemd
     system:
+      disabled:
+        - gdm.service
       enabled:
         - netbird.service
+        - greetd.service
 
-  - type: signing # this sets up the proper policy & signing files for signed images to work fully
+  - type: signing
