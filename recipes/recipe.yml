@@ -21,6 +21,7 @@ modules:
         - duxlabs/dms
         #- kaleedtc/mangowm
         - sdegler/hyprland
+        - peterwu/rendezvous
     install:
       packages:
         - dms
