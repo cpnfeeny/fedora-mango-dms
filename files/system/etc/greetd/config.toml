@@ -2,5 +2,5 @@
 vt = 1
 
 [default_session]
-command = "dms-greeter --command mango"
+command = "env XKB_DEFAULT_LAYOUT=us XKB_DEFAULT_VARIANT=dvorak dms-greeter --command mango"
 user = "greeter"

@@ -67,6 +67,7 @@ modules:
   - type: script
     snippets:
       - "dnf install -y --setopt=tsflags=noscripts netbird netbird-ui"
+      - "grep -q '^netbird:' /etc/group || getent group netbird >> /etc/group"
 
   - type: systemd
     system:
