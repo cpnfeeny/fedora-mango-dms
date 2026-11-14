@@ -53,6 +53,7 @@ modules:
         - eza
         - simple-scan
         - udiskie
+        - nano
         #needed coprs
         #bluetuith
         #freshfetch
