@@ -78,5 +78,6 @@ modules:
       enabled:
         - netbird.service
         - greetd.service
+        - sshd.service
 
   - type: signing
