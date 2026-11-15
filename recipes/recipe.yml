@@ -49,6 +49,7 @@ modules:
         - udiskie
         - nano
         - bibata-cursor-themes
+        - wlopm
 
   - type: default-flatpaks
     configurations:
