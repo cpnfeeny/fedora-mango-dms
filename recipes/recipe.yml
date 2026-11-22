@@ -79,5 +79,7 @@ modules:
         - netbird.service
         - greetd.service
         - sshd.service
-
+      user:
+        enabled:
+          - seed-skel-config.service
   - type: signing

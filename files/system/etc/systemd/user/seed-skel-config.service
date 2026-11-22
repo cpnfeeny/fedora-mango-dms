@@ -1,0 +1,10 @@
+[Unit]
+Description=Seed missing /etc/skel/.config files for user
+ConditionPathExists=!/%h/.config/mango/config.conf
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/cp -rn /etc/skel/.config/. %h/.config/
+
+[Install]
+WantedBy=default.target
