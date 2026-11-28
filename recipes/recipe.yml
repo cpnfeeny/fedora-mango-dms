@@ -26,6 +26,8 @@ modules:
       packages:
         - dms
         - dux-greeter
+        - dux-files
+        - dux-search
         - mangowm
         - quickshell
         - hypridle
